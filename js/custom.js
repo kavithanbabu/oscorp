@@ -1,9 +1,7 @@
 /* Ready function */
 $(function () {
-    alert('ready');
     /* Subscribe Button */
     $('#newsletter-subscribe-button').click(function () {
-        alert('click');
         var emailIn = $('#newsletter-email').val();
         if (emailIn.length != 0) {
             if (validateEmail(emailIn)) {
@@ -36,7 +34,7 @@ $(function () {
                 }, 3000);
             }
         } else {
-            $('.showMsg').html('Oops! This doesn\'t look alright. Would you like to try again?').fadeIn();
+            $('.showMsg').html('Please enter your email address').fadeIn();
             setTimeout(function () {
                 $('.showMsg').fadeOut();
             }, 3000);

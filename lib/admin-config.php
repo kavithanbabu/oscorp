@@ -15,6 +15,4 @@ if (is_admin()) {
 }
 
 include('includes/theme-options.php');
-//include('includes/pagination.php');
-//include('metabox/gallery.php');
-//include('includes/admin-entry-pages.php');
+include('includes/custom_functions.php');

@@ -151,7 +151,7 @@ $(function() {
     //setSlideCaption();
     //groupSliders();
     
-    $('#hero_slider').flexslider({
+   /* $('#hero_slider').flexslider({
             animation: "slide",
             animationLoop: true,
             slideshow: true,
@@ -182,8 +182,8 @@ $(function() {
 	        move: 3
 	    });
    
-    
-    
+    */
+	/*
         $("#testForm").validate({
         // this is the html element that will wrap error messages
         errorElement: "span",
@@ -231,7 +231,7 @@ $(function() {
         }
     }
 
-  );
+  ); */
   
         $('.testButton').on('click', function (e) {
             $('#modalBox').modal({
@@ -307,8 +307,8 @@ $(function() {
         		//$('#hero_slider').removeClass('mobileVersion');
         		$('#latest_products_slider').addClass('flexslider thumbSlider carousel six-col-prd-slider').removeClass('mobileVersion');
         		$('#categories_slider').addClass('flexslider carousel six-col-prd-slider').removeClass('mobileVersion');
-        		intlatest_productsSlider(); 
-        		intcategories_Slider(); 
+        		//intlatest_productsSlider(); 
+        		//intcategories_Slider(); 
        		}
 	  }
 
@@ -339,256 +339,4 @@ var intSlideCaption = function () {
 	
 }
 
-var intcategorySlider = function () {
-	$('#category_slider').flexslider({
-	        animation: "slide",
-	        animationLoop: true,
-	        slideshow: false, 
-	        itemWidth: 140,
-	        itemMargin: 28,
-	        minItems: 3,
-	        maxItems: 6,
-	        move: 3
-	    });	
-}
-
-var intbrandSlider = function () {
-	$('#brand_slider').flexslider({
-	        animation: "slide",
-	        animationLoop: true,
-	        slideshow: false, 
-	        itemWidth: 80,
-	        itemMargin: 28,
-	        minItems: 3,
-	        maxItems: 12,
-	        move: 3
-	    });	
-}
-
-var intlatest_productsSlider = function () {
-	$('#latest_products_slider').flexslider({
-	        animation: "slide",
-	        animationLoop: false,
-	        slideshow: false, 
-	        itemWidth: 224,
-	        itemMargin: 28,
-	        minItems: 1,
-	        maxItems: 4,
-	        move: 2,
-	        pauseOnAction: true,
-            pauseOnHover: true
-	    });	
-}
-
-var intbest_sellersSlider = function () {
-	$('#best_sellers_slider').flexslider({
-	        animation: "slide",
-	        animationLoop: true,
-	        slideshow: true, 
-	        itemWidth: 224,
-	        itemMargin: 0,
-	        minItems: 1,
-	        maxItems: 1,
-	        move: 1,
-	        pauseOnAction: true,
-            pauseOnHover: true
-	    });	
-}
-
-var intfeatured_leftSlider = function () {
-	$('#featured_slider_left').flexslider({
-            animation: "slide",
-            animationLoop: true,
-            slideshow: true,
-        });  
-}
-
-var intfeatured_rightSlider = function () {
-	$('#featured_slider_right').flexslider({
-            animation: "slide",
-            animationLoop: true,
-            slideshow: true,
-        });  
-}
-
-var intcategories_Slider = function () {
-	$('#categories_slider').flexslider({
-            animation: "slide",
-	        animationLoop: true,
-	        slideshow: false, 
-	        itemWidth: 210,
-	        itemMargin: 28,
-	        minItems: 1,
-	        maxItems: 3,
-	        move: 3,
-	    });	
-}
-
-var intupsell_Slider = function () {
-	$('#upsell_slider').flexslider({
-            animation: "slide",
-	        animationLoop: true,
-	        slideshow: false, 
-	        itemWidth: 210,
-	        itemMargin: 28,
-	        minItems: 1,
-	        maxItems: 5,
-	        move: 4,
-	    });	
-}
-
-var intalsobought_Slider = function () {
-    $('#alsobought_slider').flexslider({
-        animation: "slide",
-        animationLoop: true,
-        slideshow: false,
-        itemWidth: 210,
-        itemMargin: 28,
-        minItems: 1,
-        maxItems: 5,
-        move: 4,
-    });
-}
-
-    
-
-
-
-//RESIVE TOP FLEXSLIDER HEIGHT ON WINDOW RESIZE
-function sliderSize(strSelector) {
-	
-	
-	var maxWidth = 980;
-	var maxHeight = 420;
-	var ratio = 0;
-	var width = $('.wrap').width();
-	var height = $('#full-width-slider #flexsliders').height();
-	
-	var selector = strSelector;
-	
-	if(width > maxWidth){
-            ratio = (maxWidth / width);
-            $('.wrap').width(maxWidth);
-            $('#full-width-slider #flexsliders').height(height * ratio);
-            //$(this).parent().height(height * ratio);
-            //$(this).parent().width(maxWidth); 
-        }
-    
-    if(height > maxHeight){
-            ratio = (maxWidth / width);
-            $('.wrap').width(maxWidth);
-            $('#full-width-slider #flexsliders').height(height * ratio);
-            //$(this).parent().height(height * ratio);
-            //$(this).parent().width(maxWidth);
-        }
-	
-	//$('#full-width-slider #flexsliders').height(intHeight);
-}
-
-
-//INT THE INDIVIDUAL SLIDERS
-var intGroupSliders = function () {
-	var setNavVisible = function(){
-		var slider = $('#flexsliders .active').data('flexslider');
-					
-		$('#flexsliders a.prev')[(
-			$('#flexsliders .wrapper .active:first-child').length &&
-			(!slider || slider.animatingTo === 0))? 'hide':'show']();
-		$('#flexsliders a.next')[(
-			$('#flexsliders .wrapper .active:last-child').length &&
-			(!slider || slider.animatingTo === slider.last))? 'hide':'show']();
-	},
-	TAB_H = 20,
-	TAB_HOVER_H = 10,
-	TAB_SELECTED_H = 20;
-	
-	// Set up flexsliders
-	$('.flexslider').flexslider({
-		animation: "slide",
-		slideshow: false,
-		useCSS:false,
-		directionNav: false,
-		controlNav: false
-		}).eq(0).addClass('active');
-		
-	$('#slide-groups a')
-		.hover(function(e){
-			if($(this).hasClass('active')) return;
-			$(this).parents('.group_selection').stop(true).animate({'margin-top':-TAB_HOVER_H},200);
-		},function(e){
-			if($(this).hasClass('active')) return;
-			$(this).parents('.group_selection').stop(true).animate({'margin-top':0},200);
-		})
-		.bind('click',function(e,keepSliderPos){
-			e.preventDefault();
-			var $t = $(this),
-				i = $t.closest('li').index(),
-				h = $('#flexsliders').height(),
-				o = h*i;
-			$('#slide-groups a').removeClass('active')
-				.parents('.group_selection').removeClass('selected').animate({'margin-top':0},200,function(){
-				$(this).find('p').css('visibility','hidden');
-			});
-			$t.addClass('active').parents('.group_selection').addClass('selected').stop(true).animate({'margin-top':-(TAB_H)},200)
-				.find('p').css('visibility','visible')
-			
-			// set active slider
-			var slider = $('#flexsliders .flexslider').removeClass('active').eq(i).addClass('active').data('flexslider');
-			
-			var height = "420";
-				
-			var slides = $('.flexslider');
-			var numSlides = slides.length;
-			// slider resets to first slide unless keepSliderPos = true
-			if(!keepSliderPos) slider.flexAnimate(0);
-			// animate sliders to show correct slider
-			//$('#flexsliders .wrapper').animate({'marginTop':-o});
-			var i = $(this).index('.slide-groups li a');
-			$('.wrapper').stop().animate({'marginTop' : height*(-i)});
-			//
-			setNavVisible();	
-	}).eq(0).click();	
-	
-	
-	var numGroups = $('#slide-groups a').length;
-	$('#flexsliders a.next').click(function(e){
-		e.preventDefault();
-		var slider = $('#flexsliders .active').data('flexslider');
-						
-		// if on last slide, move to next group by clicking tab
-		if( !slider || slider.currentSlide === slider.last ){
-			var $nxtGroup = $('#slide-groups .selected').closest('li').next();
-			$nxtGroup.find('a').trigger('click',[true]);
-		}
-			else if(!slider.animating){
-			//slider.flexAnimate(slider.getTarget('next'));
-			slider.flexslider('next');
-			setNavVisible();
-		} 
-	});
-	
-	$('#flexsliders a.prev').click(function(e){
-		e.preventDefault();
-		var slider = $('#flexsliders .active').data('flexslider');
-		// if on first slide, move to prev group by clicking tab
-		if(	!slider || slider.currentSlide === 0 ){
-			var $nxtGroup = $('#slide-groups .selected').closest('li').prev();
-			//$nxtGroup.find('a').click();
-			$nxtGroup.find('a').trigger('click',[true]);
-		}
-			else if(!slider.animating){
-			//slider.flexAnimate(slider.getTarget('prev'));
-			slider.flexslider('prev');
-			setNavVisible();
-		}
-	});
-	
-		
-}
-
-
-//ITEMS TO RUN AFTER WINDOW LOADS
-$(window).load(function() {
-      intSlideCaption();
-});
 

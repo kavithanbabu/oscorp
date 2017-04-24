@@ -1,3 +1,19 @@
 /*
 Theme Name: Dalkurd
 */
+.info .star-rating, .woocommerce-result-count, .woocommerce-ordering{
+    display: none;
+}
+.productResultsLists article figure .info span a{
+    background: #005abb !important;
+}
+.productResultsLists article figure .info span a:hover{
+    color: #fff !important;
+    background: #000 !important;
+}
+.notopmargin figure span.add_cart{
+    display: none;
+}
+.prd_paging li a.prev, .prd_paging li a.next{
+    text-indent: 0;
+}

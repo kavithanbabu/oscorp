@@ -57,9 +57,9 @@
             <div class="grid_12 col notopmargin nobotmargin">
                 <ul class="footer_list">
                     <li class="right text-right">Copyright &copy; 2017 dalkurd FC Store. All rights reserved.</li>
-                    <li><a href="shippinginfo-1.html">Shipping &amp; Returns</a></li>
-                    <li><a href="privacyinfo.html">Privacy Notice</a></li>
-                    <li><a href="conditionsofuse-1.html">Conditions of Use</a></li>
+                    <li><a href="<?php echo get_bloginfo('url') ?>/shipping-returns">Shipping &amp; Returns</a></li>
+                    <li><a href="<?php echo get_bloginfo('url') ?>/privacy-notice">Privacy Notice</a></li>
+                    <li><a href="<?php echo get_bloginfo('url') ?>/conditions-of-use">Conditions of Use</a></li>
                     <li><a href="http://www.untiedshoes.co.uk/" title="Freelance web developer">Freelance web developer</a></li>
                 </ul>
             </div>

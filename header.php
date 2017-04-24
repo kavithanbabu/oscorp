@@ -9,6 +9,7 @@
         <link rel="shortcut icon" href="favicon.ico" />
         <link href="<?php echo get_bloginfo('template_url'); ?>/Themes/Base-Theme/Content/fonts.css" rel="stylesheet" type="text/css" />
         <link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold' rel='stylesheet' type='text/css' />
+        <link href="<?php echo get_bloginfo('template_url'); ?>/style.css" rel="stylesheet" type="text/css" />
         <script src="<?php echo get_bloginfo('template_url'); ?>/js/jquery-1.11.3.js"></script>
         <script src="<?php echo get_bloginfo('template_url'); ?>/Scripts/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script> 
         <style type="text/css">
@@ -16,8 +17,12 @@
                 padding: 0 6px; font-size: 12px;
             }
         </style>
+        <script type="text/javascript">
+            var templateURL = '<?php echo get_bloginfo('template_url') ?>/';
+        </script>
     </head>
     <body>
+        <?php global $woocommerce; ?>
         <header id="header-section"> 
             <!--LOGO & QUICK LINKS-->
             <div class="container-wrapper">
@@ -31,7 +36,7 @@
                                 <ul class="quick-access-links links">
                                     <li class="first"><a href="<?php echo get_bloginfo('url') ?>/register" class="ico-register">Register</a></li>
                                     <li><a href="<?php echo get_bloginfo('url') ?>/login" class="ico-login">Log in</a></li>
-                                    <li id="topcartlink"><a href="<?php echo get_bloginfo('url') ?>/cart" class="ico-cart">Shopping Cart (<span class="cart-qty">1</span>)</a></li>
+                                    <li id="topcartlink"><a href="<?php echo get_bloginfo('url') ?>/cart" class="ico-cart">Shopping Cart (<span class="cart-qty"><?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count); ?></span>)</a></li>
                                 </ul>
                                 <script type="text/javascript">
                                     $(document).ready(function () {
@@ -106,8 +111,8 @@
                 <div class="container" id="top-cart">
                     <ul class="right hide-phone">
                         <li>
-                            <div class="top-basket"><a href="/cart" id="basket-toggle">Shopping Cart - <span class="cart-total"></span></a>
-                                <div class="basket-count"><span class="cart-qty"></span></div>
+                            <div class="top-basket"><a href="<?php echo get_bloginfo('url') ?>/cart" id="basket-toggle">Shopping Cart - <span class="cart-total"></span></a>
+                                <div class="basket-count"><span class="cart-qty"><?php echo sprintf(_n('%d', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count); ?></span></div>
                             </div>	
                         </li>
                         <li class="basket-contents basket-contents-full">

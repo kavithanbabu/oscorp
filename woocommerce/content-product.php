@@ -27,29 +27,6 @@ if (empty($product) || !$product->is_visible()) {
 }
 ?>
 <article class="grid_3 col notopmargin" data-productid="8041">
-    <figure>
-        <a href="detail.html" title="Show details for ESSENTIALS FLEECE HOODY">
-
-            <img style="height: 250px;" alt="Picture of ESSENTIALS FLEECE HOODY" src="dulkard_images/flag.jpg"
-                 title="Show details for ESSENTIALS FLEECE HOODY" />
-        </a>
-        <figcaption>
-            <h5><a href="kl-8041-essentials-fleece-hoody.html">FLAG</a></h5>
-        </figcaption>
-    </figure>
-    <p class="captionbottomBorder">The dalkurd FC Essentials Fleece Hoody by Avec Sport</p>
-    <div class="info">
-        <span class="price">
-            <span>From: </span>
-
-            &#163;29.00</span>
-
-        <span class="add_cart">
-            <a href="#" title="Add to cart" onclick="AjaxCart.addproducttocart_catalog('/addproducttocart/catalog/8041/1/1');return false;" class="button-radius">Add to cart</a>
-        </span>
-    </div>
-</article>
-<article class="grid_3 col notopmargin">
     <?php
     /**
      * woocommerce_before_shop_loop_item hook.
@@ -67,26 +44,30 @@ if (empty($product) || !$product->is_visible()) {
     do_action('woocommerce_before_shop_loop_item_title');
 
     /**
-     * woocommerce_shop_loop_item_title hook.
-     *
-     * @hooked woocommerce_template_loop_product_title - 10
-     */
-    do_action('woocommerce_shop_loop_item_title');
-
-    /**
-     * woocommerce_after_shop_loop_item_title hook.
-     *
-     * @hooked woocommerce_template_loop_rating - 5
-     * @hooked woocommerce_template_loop_price - 10
-     */
-    do_action('woocommerce_after_shop_loop_item_title');
-
-    /**
      * woocommerce_after_shop_loop_item hook.
      *
      * @hooked woocommerce_template_loop_product_link_close - 5
      * @hooked woocommerce_template_loop_add_to_cart - 10
      */
     do_action('woocommerce_after_shop_loop_item');
+
+    /**
+     * woocommerce_shop_loop_item_title hook.
+     *
+     * @hooked woocommerce_template_loop_product_title - 10
+     */
+    do_action('woocommerce_shop_loop_item_title');
     ?>
+    <p class="captionbottomBorder"><?php the_excerpt(); ?></p>
+    <div class="info">
+        <?php
+        /**
+         * woocommerce_after_shop_loop_item_title hook.
+         *
+         * @hooked woocommerce_template_loop_rating - 5
+         * @hooked woocommerce_template_loop_price - 10
+         */
+        do_action('woocommerce_after_shop_loop_item_title');
+        ?>
+    </div>
 </article>

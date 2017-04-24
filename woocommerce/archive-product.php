@@ -95,14 +95,7 @@ get_header();
                                         <?php wc_get_template_part('content', 'product'); ?>
                                     <?php endwhile; // end of the loop. ?>
                                     <?php woocommerce_product_loop_end(); ?>
-                                    <?php
-                                    /**
-                                     * woocommerce_after_shop_loop hook.
-                                     *
-                                     * @hooked woocommerce_pagination - 10
-                                     */
-                                    do_action('woocommerce_after_shop_loop');
-                                    ?>
+
                                 <?php elseif (!woocommerce_product_subcategories(array('before' => woocommerce_product_loop_start(false), 'after' => woocommerce_product_loop_end(false)))) : ?>
                                     <?php
                                     /**
@@ -125,19 +118,14 @@ get_header();
                         </div>
                     </section>
                     <hr class="thin_light" />
-                    <div class="grid_12 col nobotmargin">
-                        <div class="row">
-                            <div class="grid_4 col notopmargin">
-
-                            </div>
-                            <div class="grid_8 col notopmargin pagination">
-                                <div class="prd_paging">
-                                    <ul><li class="current-page"><span>1</span></li><li class="individual-page"><a href="/avec-casual?pagenumber=2">2</a></li><li class="next-page"><a href="/avec-casual?pagenumber=2">Next</a></li></ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                    <?php
+                    /**
+                     * woocommerce_after_shop_loop hook.
+                     *
+                     * @hooked woocommerce_pagination - 10
+                     */
+                    do_action('woocommerce_after_shop_loop');
+                    ?>
                 </div>
             </div>
             <!--END RIGHT CONTENT-->
