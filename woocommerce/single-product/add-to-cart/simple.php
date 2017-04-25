@@ -37,26 +37,48 @@ if ( $product->is_in_stock() ) : ?>
 			 * @since 2.1.0.
 			 */
 			do_action( 'woocommerce_before_add_to_cart_button' );
-
-			/**
-			 * @since 3.0.0.
-			 */
-			do_action( 'woocommerce_before_add_to_cart_quantity' );
-
-			woocommerce_quantity_input( array(
-				'min_value'   => apply_filters( 'woocommerce_quantity_input_min', $product->get_min_purchase_quantity(), $product ),
-				'max_value'   => apply_filters( 'woocommerce_quantity_input_max', $product->get_max_purchase_quantity(), $product ),
-				'input_value' => isset( $_POST['quantity'] ) ? wc_stock_amount( $_POST['quantity'] ) : $product->get_min_purchase_quantity(),
-			) );
-
-			/**
-			 * @since 3.0.0.
-			 */
-			do_action( 'woocommerce_after_add_to_cart_quantity' );
 		?>
-
-		<button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="single_add_to_cart_button button alt"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
-
+		<div class="row product-attributes">
+		<?php
+		/**
+		 * @since 3.0.0.
+		 */
+		do_action( 'woocommerce_before_add_to_cart_quantity' );
+		?>
+    <div class="add-to-cart">
+        <div class="">
+            <dl>
+                <dt class="grid_4 col nobotmargin mobile-two"><span class="text-prompt">QUANTITY</span></dt>
+                <dd class="grid_6 col nobotmargin mobile-two">
+					<?php
+					woocommerce_quantity_input( array(
+										'min_value'   => apply_filters( 'woocommerce_quantity_input_min', $product->get_min_purchase_quantity(), $product ),
+										'max_value'   => apply_filters( 'woocommerce_quantity_input_max', $product->get_max_purchase_quantity(), $product ),
+										'input_value' => isset( $_POST['quantity'] ) ? wc_stock_amount( $_POST['quantity'] ) : $product->get_min_purchase_quantity(),
+									) );
+					?>
+				</dd>
+            </dl>
+        </div>
+		<?php
+		/**
+		 * @since 3.0.0.
+		 */
+		do_action( 'woocommerce_after_add_to_cart_quantity' );
+		?>
+        <hr class="thin_light ">
+        <div class="">
+            <div class="grid_6 col purchase">						
+				<button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="single_add_to_cart_button button alt buy-button mediumbutton fullbutton add add-to-cart-button"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
+			</div>
+            <div class="grid_6 col text-right" style="line-height: 34px;">
+                <span class="price" style="color: #5d5e5f; font-size: 1.1em; line-height: 0em;">ITEM PRICE: <span class="item-price"></span></span>
+            </div>
+        </div>
+        <hr class="thin_light ">
+    </div>
+</div>
+		
 		<?php
 			/**
 			 * @since 2.1.0.

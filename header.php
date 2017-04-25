@@ -20,6 +20,7 @@
         <script type="text/javascript">
             var templateURL = '<?php echo get_bloginfo('template_url') ?>/';
         </script>
+		<?php wp_head(); ?>
     </head>
     <body>
         <?php global $woocommerce; ?>

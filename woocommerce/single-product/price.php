@@ -23,4 +23,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $product;
 
 ?>
-<p class="price"><?php echo $product->get_price_html(); ?></p>
+<div class="prices">
+    <!--product reviews-->
+    <div class="" itemprop="offers" style="float:left">
+        <div class="product-price">
+            <span itemprop="price" class="price-value-8035">
+            <?php echo $product->get_price_html(); ?>
+            </span>
+        </div>
+        <meta itemprop="priceCurrency" content="GBP">
+    </div>
+    <!--availability-->
+    <div class="availability">
+        <div class="stock">
+            <span class="label">Availability:</span>
+            <span class="value" id="stock-availability-value-8035"><?php echo ( $product->is_in_stock() ? "In stock":"Sorry product not available"); ?></span>
+        </div>
+    </div>
+</div>

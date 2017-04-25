@@ -250,7 +250,7 @@ $(window).resize(function(){
             menu.removeAttr('style');
         }
     
-    sliderSize('#full-width-slider #flexsliders'); 
+    //sliderSize('#full-width-slider #flexsliders'); 
     intSlideCaption();
     //sliderHeight($('.flexslider').width(),$('.flexslider').height(), '.flexslider');
 

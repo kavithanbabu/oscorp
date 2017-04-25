@@ -71,5 +71,6 @@
 <script src="<?php echo get_bloginfo('template_url'); ?>/Scripts/plugins.js"></script>
 <script src="<?php echo get_bloginfo('template_url'); ?>/Scripts/main.js"></script>
 <script src="<?php echo get_bloginfo('template_url'); ?>/js/custom.js"></script>
+<?php wp_footer(); ?>
 </body>
 </html>
