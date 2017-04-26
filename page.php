@@ -17,10 +17,10 @@
 get_header();
 ?>
 
-<div class="wrap">
-    <div id="primary" class="content-area">
-        <main id="main" class="site-main" role="main">
-
+<!--START MAIN CONTAINER-->
+<div class="container-wrapper">
+    <div class="container-with-border" id="mainContent">
+        <div class="row">
             <?php
             while (have_posts()) : the_post();
 
@@ -34,9 +34,10 @@ get_header();
             endwhile; // End of the loop.
             ?>
 
-        </main><!-- #main -->
-    </div><!-- #primary -->
-</div><!-- .wrap -->
+            </main><!-- #main -->
+        </div><!-- #primary -->
+    </div><!-- .wrap -->
 
-<?php
-get_footer();
+    <?php
+    get_footer();
+    
